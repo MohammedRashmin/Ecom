@@ -1,0 +1,43 @@
+<hr>
+
+
+<h2>Built in pipes Demo</h2>
+<p><b>Original Text:</b> {{'Hello World'}}</p>
+<p><b>Uppercase:</b>{{'Hello World' | uppercase }}</p>
+<p><b>Lowercase:</b>{{'Hello World' | lowercase}}</p>
+<p><b>Date:</b>{{today | date }}</p>
+<p><b>Currency:</b>{{price | currency : 'USD'}}</p>
+<p><b>JSON:</b>{{obj | json}}</p>
+
+
+<hr>
+
+
+<p><b>Slice:</b>{{'Angular Pipes' | slice:0:4}}</p>
+<p><b>Custom Date Format: </b>{{today | date: 'fullDate'}}</p>
+<p><b>Currency with Code:</b> {{ price | currency:'EUR' }}</p>
+
+
+<hr>
+<h1>Custom Pipe Demo</h1>
+
+<p><b>TitleCase: </b>{{'angular custom pipe' | titlecase}}</p>
+
+
+<h2>Impure Pipe Demo</h2>
+ 
+ <p><b>Titlecase Object Name:</b> {{ obj.name | titlecase }}</p>
+ <input type="text"[(ngModel)]="name">
+ <div>{{name | titlecase}}</div>
+ <button (click)="updateName()">Update Name</button>
+
+
+<hr>
+<br><br>
+<input type="text" [(ngModel)] ="title">
+
+<ul>
+    <li *ngFor="let array of Products | FilterArray :title ">{{array}}</li>
+</ul>
+
+<!-- <p>{{title | FilterArray}}</p> -->
